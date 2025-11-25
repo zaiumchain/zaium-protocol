@@ -1,134 +1,135 @@
-h1 align="center">ZAIUM Protocol</h1>
 
-<p align="center"><strong>
-Decentralize power. Shape the future. Sustain the world — block by block.
-</strong></p>
+<h1 align="center">ZAIUM Protocol</h1>
+
+**Decentralize power. Shape the future. Sustain the world — block by block.**
 
 ---
 
-## Overview
+## 🧩 Overview  
+The **ZAIUM Protocol** defines the core rules, data structures, cryptographic primitives and consensus mechanisms that power the ZAIUM blockchain.
 
-The **ZAIUM Protocol** defines the core rules, structures, cryptographic primitives, and consensus mechanisms that power the ZAIUM blockchain.
+This repository documents the technical foundation of the network, including:
 
-This repository documents the technical foundation of the ZAIUM network, including:
-
-- Consensus algorithm design  
-- Block format and validation rules  
-- Transaction structure  
-- Cryptographic algorithms (hashing, signatures, keys)  
+- Consensus mechanism (PoW SHA-256)  
+- Block structure and validation rules  
+- Transaction model (UTXO)  
+- Cryptographic algorithms  
 - P2P networking and node behavior  
-- Governance and protocol upgrade rules  
+- Governance model and protocol evolution  
 
-The protocol is the reference for implementers, auditors, and contributors.
+This serves as a reference for developers, implementers, auditors and researchers.
 
 ---
 
-## Cryptographic Foundations
+## 🔐 Cryptographic Foundations  
 
-ZAIUM uses industry-standard cryptography to secure the network:
-
-### **Hashing**
-- SHA-256 (Proof-of-Work compatible engine)  
+### **Hashing**  
+- SHA-256 (Proof-of-Work hashing engine)  
 - Double-SHA-256 for block header hashing  
 - Merkle Trees for transaction commitments  
 
-### **Digital Signatures**
+### **Digital Signatures**  
 - ECDSA over secp256k1  
-- Public/private key pairs  
 - Deterministic signatures (RFC-6979)  
+- Secure keypair generation  
 
-### **Addressing**
-- Base58Check encoding  
+### **Address Formats**  
+- Base58Check (Legacy)  
 - Pay-to-Public-Key-Hash (P2PKH)  
 - Pay-to-Script-Hash (P2SH)  
+- SegWit (Bech32) planned for native support  
 
 ---
 
-## Block Structure
+## 📦 Block Structure  
 
-Each block contains:
+Each ZAIUM block contains:
 
 block { version previous_block_hash merkle_root timestamp difficulty_target nonce transactions[] }
 
-Block validation rules include:
-
+### **Block validation rules include:**  
 - Must reference a valid previous block  
-- Difficulty target must be respected  
-- Nonce must satisfy PoW requirement  
-- Coinbase transaction must follow issuance rules  
+- Must satisfy the current difficulty target  
+- Nonce must meet Proof-of-Work conditions  
+- Coinbase transaction must respect issuance rules  
 - All transactions must be valid  
 
 ---
 
-## Consensus Mechanism (Work in Progress)
+## ⚙️ Consensus Mechanism  
 
-ZAIUM is based on a **modified Proof-of-Work (PoW)** model with:
+ZAIUM uses a **Proof-of-Work (PoW) SHA-256** consensus model inspired by Bitcoin, with adjustments for:
 
-- Stable block times  
-- Dynamic difficulty adjustment  
-- Protection against timestamp manipulation  
-- Incentive rules for miners/validators  
+- Faster block times (60 seconds)  
+- Stability-oriented difficulty retargeting  
+- Timestamp protection  
 - Double-spend resistance  
-- Fork resolution through longest-chain rule  
+- Fork resolution via longest-chain rule  
 
-Future protocol extensions may include:
+Future protocol extensions may explore:
 
-- Hybrid PoW-PoS  
 - Sidechains  
-- Zero-knowledge features  
+- Optional privacy enhancements  
+- Zero-knowledge based features  
+- Layer-2 scaling mechanisms (Lightning compatibility)  
+
+*No PoS or hybrid models are planned.*
 
 ---
 
-## P2P Network
+## 🌐 P2P Network  
 
-Nodes communicate using a decentralized peer-to-peer network:
+Nodes communicate through a decentralized peer-to-peer network using:
 
+- Version handshake  
 - Inventory announcements (INV)  
 - Block and transaction propagation  
-- Version handshake  
 - Node capability negotiation  
-- Misbehavior scoring and banning  
+- Misbehavior scoring and peer banning  
+- Orphan block handling  
+
+The network is designed to be lightweight, resilient and globally scalable.
 
 ---
 
-## Protocol Documentation Roadmap
+## 📘 Documentation Scope (No fixed schedule)
 
-### **Phase 1 — 2025 Q1**
-- Initial public specification  
-- Block format draft  
-- Transaction structure  
+This repository will progressively document:
 
-### **Phase 2 — 2025 Q2**
-- Full consensus rules  
-- Difficulty adjustment algorithm  
-- Network protocol v1  
+### 📌 Core Specifications  
+- Consensus rules  
+- Block and transaction structure  
+- Signature and script validation  
+- Difficulty adjustment  
 
-### **Phase 3 — 2025 Q3**
-- Security analysis  
-- Cryptography audit  
-- Test vectors  
+### 📌 Network Protocol  
+- Message types  
+- Handshakes  
+- Inventory propagation  
+- Peer discovery  
 
-### **Phase 4 — 2025 Q4**
-- Final protocol release  
-- Implementation alignment with `zaium-core`  
+### 📌 Security & Integrity  
+- Threat model  
+- Mitigations  
+- Replay protection  
+- Finality assumptions  
+
+### 📌 Upgrade Path  
+- Soft-fork & hard-fork policy  
+- Versioning rules  
+- Governance structure  
 
 ---
 
-## License
-
-All protocol documentation is intended to be released under the MIT License.
+## 📜 License  
+All protocol documentation will be released under the **MIT License**.
 
 ---
 
-## Official Links
-
+## 🌐 Official Links  
 - Website: https://zaium.org  
 - GitHub Organization: https://github.com/zaium-chain  
 - Twitter/X: https://twitter.com/zaiumchain  
 - Telegram: https://t.me/zaiumchain  
 
----
-
-<p align="center">
-  <strong>ZAIUM — Building the future block by block.</strong>
-</p>
+**ZAIUM — Building the future, block by block.**
